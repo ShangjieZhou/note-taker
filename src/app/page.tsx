@@ -49,7 +49,7 @@ export default function Home() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       <main className="h-screen w-screen">
         <div className="flex flex-col w-full h-full">
-          <div className="flex shrink-0 items-center h-24 border-slate-200 border-b-2 justify-between px-4">
+          <div className="flex gap-y-4 flex-col md:flex-row shrink-0 items-center border-slate-200 border-b-2 justify-between p-4">
             <h1 className="font-extrabold text-2xl">
               The Best Note-Taking App
             </h1>

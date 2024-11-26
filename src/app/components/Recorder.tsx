@@ -139,32 +139,35 @@ const Recorder = ({
   }, []);
 
   return (
-    <div className="flex items-center gap-x-4">
+    <div className="flex items-center gap-x-4 flex-wrap">
       {!isLoading && (
         <>
           {isRecording && <SoundFreqDisplayer frequency={currFreq} />}
-          <button
-            className={clsx({
-              "px-6 py-3 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none":
-                true,
-              "bg-red-500": isRecording && !isPaused,
-              "bg-green-500": !isRecording || isPaused,
-            })}
-            onClick={isRecording ? pauseOrResumeRecording : startRecording}
-          >
-            {displayBtnText()}
-          </button>
-          {hasStarted && (
+
+          <div className="flex gap-y-2 gap-x-4 flex-col xs:flex-row">
             <button
               className={clsx({
-                "px-6 py-3  hover:bg-blue-600 bg-blue-500 disabled:bg-gray-600 enabled:hover:-translate-y-1 enabled:hover:scale-105 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2":
+                "px-6 py-3 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none":
                   true,
+                "bg-red-500": isRecording && !isPaused,
+                "bg-green-500": !isRecording || isPaused,
               })}
-              onClick={isRecording ? stopRecording : startNewSession}
+              onClick={isRecording ? pauseOrResumeRecording : startRecording}
             >
-              {isRecording ? "Finish" : "New Session"}
+              {displayBtnText()}
             </button>
-          )}
+            {hasStarted && (
+              <button
+                className={clsx({
+                  "px-6 py-3  hover:bg-blue-600 bg-blue-500 disabled:bg-gray-600 enabled:hover:-translate-y-1 enabled:hover:scale-105 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2":
+                    true,
+                })}
+                onClick={isRecording ? stopRecording : startNewSession}
+              >
+                {isRecording ? "Finish" : "New Session"}
+              </button>
+            )}
+          </div>
         </>
       )}
     </div>

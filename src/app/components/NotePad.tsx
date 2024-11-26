@@ -28,7 +28,7 @@ const NotePad = ({ audioNotes, isLoading }: Props) => {
       {isLoading ? (
         <div className="w-full h-full flex flex-col justify-center items-center gap-y-2">
           <ClimbingBoxLoader color="pink" size={20} />
-          <h2 className="text-pink-600 text-2xl font-bold">
+          <h2 className="text-pink-600 text-2xl font-bold text-center">
             Adding smart-generated transcription to your notes...
           </h2>
         </div>
