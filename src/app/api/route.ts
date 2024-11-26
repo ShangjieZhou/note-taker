@@ -8,7 +8,7 @@ function mockLLM(audioData: Buffer): Promise<string> {
   for (let i = 0; i < textLength; i++) {
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
-  return new Promise((resolve, _) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(result);
     }, 3000);
