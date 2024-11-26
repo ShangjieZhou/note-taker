@@ -1,6 +1,6 @@
 ## Before you begin
 Make sure you have the following on your computer:
-1. Node.js (version 16.x or later)
+1. Node.js (version 18.18 or later)
 2. npm
 
 ## Local setup
