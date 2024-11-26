@@ -1,6 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs/promises";
-import path from "path";
 
 function mockLLM(audioData: Buffer): Promise<string> {
   const textLength = Math.ceil(audioData.length / 100);

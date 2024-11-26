@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 type Props = {
@@ -18,6 +18,8 @@ const NotePad = ({ audioNotes, isLoading }: Props) => {
   useEffect(() => {
     if (audioNotes !== "") {
       setNotes(`${notes}\n${audioNotes}`);
+    } else if (notes !== "") {
+      setNotes("");
     }
   }, [audioNotes]);
 
@@ -39,11 +41,6 @@ const NotePad = ({ audioNotes, isLoading }: Props) => {
               className="h-full focus:outline-none w-full"
               placeholder="Type your notes here..."
             ></textarea>
-          </div>
-          <div className="flex gap-x-4 justify-end">
-            <button className="px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
-              Save Notes
-            </button>
           </div>
         </>
       )}

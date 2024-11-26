@@ -3,7 +3,6 @@
 import Recorder from "./components/Recorder";
 import { useState } from "react";
 import NotePad from "./components/NotePad";
-import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 export default function Home() {
   const [isGenerating, setIsGenerating] = useState(false);
@@ -42,6 +41,10 @@ export default function Home() {
     reader.readAsDataURL(data);
   };
 
+  const clearSession = () => {
+    setNotes("");
+  }
+
   return (
     <div className="font-[family-name:var(--font-geist-sans)]">
       <main className="h-screen w-screen">
@@ -53,6 +56,7 @@ export default function Home() {
             <Recorder
               isLoading={isGenerating}
               submitRecording={submitRecording}
+              newSessionCallback={clearSession}
             />
           </div>
 
